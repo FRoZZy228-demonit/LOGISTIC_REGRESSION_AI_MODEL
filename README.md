@@ -1,5 +1,5 @@
 
-# CUSTOM_LOGISTICREGRESSION_MODEL_AI
+# CUSTOM_LOGISTIC_REGRESSION_AI_MODEL_CYBER_THREATS
 
 This project is a complete end-to-end AI-powered Cybersecurity Intrusion Detection System built using a custom implementation of Logistic Regression in pure NumPy, without using high-level machine learning libraries like PyTorch or scikit-learn for modeling. It includes:
 
