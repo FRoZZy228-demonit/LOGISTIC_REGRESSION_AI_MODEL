@@ -10,12 +10,12 @@ This project is a complete end-to-end AI-powered Cybersecurity Intrusion Detecti
 - Live prediction interface
 
 ## Dataset
-
+<img src="https://raw.githubusercontent.com/Ahmadjamil888/CUSTOM_LOGISTIC_REGRESSION_AI_MODEL_CYBER_THREATS/refs/heads/main/download%20(1).png">
 The dataset used is the Cybersecurity Intrusion Detection Dataset from Kaggle:
 
 Dataset Link on Kaggle: https://www.kaggle.com/datasets/aungpyaeap/cybersecurity-intrusion-detection-dataset  
 Filename: `cybersecurity_intrusion_data.csv`
-
+Later edited with numpy and pandas for better approach.
 ## Objective
 
 To detect whether a given session or user behavior is part of a cyber attack (binary classification: 0 = Normal, 1 = Attack), based on extracted behavioral features.
@@ -97,6 +97,8 @@ python app.py
 Visit: http://127.0.0.1:5000/  
 Fill the form to test whether a session is classified as normal or an intrusion.
 
+
+<img src="https://raw.githubusercontent.com/Ahmadjamil888/CUSTOM_LOGISTIC_REGRESSION_AI_MODEL_CYBER_THREATS/refs/heads/main/Screenshot%202025-07-07%20205743.png">
 ## File Structure
 
 ```
