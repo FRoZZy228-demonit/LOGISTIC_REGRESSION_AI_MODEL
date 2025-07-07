@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cyber Defense AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Cybersecurity Intrusion Detection</h1>
+    <form id="inputForm">
+      <!-- Replace these inputs with your actual feature names -->
+      <label>Network Packet Size</label>
+      <input type="number" step="any" name="network_packet_size" required>
+
+      <label>Login Attempts</label>
+      <input type="number" step="any" name="login_attempts" required>
+
+      <label>Session Duration</label>
+      <input type="number" step="any" name="session_duration" required>
+
+      <label>IP Reputation Score</label>
+      <input type="number" step="any" name="ip_reputation_score" required>
+
+      <label>Failed Logins</label>
+      <input type="number" step="any" name="failed_logins" required>
+
+      <label>Unusual Time Access (0 or 1)</label>
+      <input type="number" step="any" name="unusual_time_access" required>
+
+      <!-- Add/remove inputs based on your final model features -->
+
+      <button type="submit">Check Intrusion</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
